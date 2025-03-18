@@ -1,0 +1,16 @@
+[project]
+name = "open-isp-docs"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mkdocs-material>=9.6.9",
+    "mkdocs>=1.6.1",
+    "mkdocstrings[python]>=0.29.0",
+    "black>=25.1.0",
+    "ispypsa",
+]
+
+[tool.uv.sources]
+ispypsa = { git = "https://github.com/Open-ISP/ISPyPSA.git", rev = "docs" }

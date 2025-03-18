@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
+
+site_name: Open-ISP Documentation
+site_url: https://open-isp.github.io
+
+theme:
+  name: material
+  features:
+    - content.code.copy
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.snippets
+  - pymdownx.inlinehilite
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options.extra:
+            docstring_style: google
+            docstring_section_style: list
+          rendering:
+            show_root_heading: true
+            show_source: true
+            show_signature: true  # This is key for displaying signatures
+            show_signature_annotations: true
+            separate_signature: true
+
+nav:
+  - Overview: index.md
+  - Quick start: quick_start.md
+  - ISPyPSA:
+    - Intro: ispypsa_intro.md
+    - Config: ispypsa_config.md
+    - Tables: ispypsa_tables.md
+    - API: ispypsa_api.md
+  - Examples:
+      - Parsing IASR tables: examples/parsing_iasr_workbook_tables.md
+      - Parsing trace data: examples/parsing_trace_data.md
+      - Default configuration capacity expansion: examples/default_capacity_expansion.md
